@@ -1,0 +1,56 @@
+<div class="m-3">
+<a class="btn btn-info" href="/">Voltar</a>
+</div>
+<h1 class="text-center my-3">Sistema de Cadastro de Música</h1>
+<form action="/musicas/Cadastrar" method="post" class="form-group m-5 mt-2">
+    <div class="row w-50 d-block m-auto g-3">
+        <div class="col-12">
+            <label class="form-label" for="titulo">Título da Música:</label>
+            <input class="form-control" type="text" name="titulo" id="titulo"
+                placeholder="Digite o título da música usando todas as letras maiúsculas" required />
+        </div>
+        <div class="col-12">
+            <label class="form-label" for="autor">Autor da Música:</label>
+            <input class="form-control" type="text" name="autor" id="autor"
+                placeholder="Digite o autor(a) da música." required />
+        </div>
+        <div class="col-12">
+            <label class="form-label" for="estrofe1">Estrofe 1 da Música:</label>
+            <textarea class="form-control" name="estrofe1" id="estrofe1"
+                placeholder="Digite ou cole a letra da estrofe da música."></textarea>
+        </div>
+        <div class="col-12">
+            <label class="form-label" for="estrofe2">Estrofe 2 da Música:</label>
+            <textarea class="form-control" name="estrofe2" id="estrofe2"
+                placeholder="Digite ou cole a letra da estrofe da música."></textarea>
+        </div>
+        <div class="col-12">
+            <label class="form-label" for="estrofe3">Estrofe 3 da Música:</label>
+            <textarea class="form-control" name="estrofe3" id="estrofe3"
+                placeholder="Digite ou cole a letra da estrofe da música."></textarea>
+        </div>
+        <div class="col-12">
+            <label class="form-label" for="estrofe4">Estrofe 4 da Música:</label>
+            <textarea class="form-control" name="estrofe4" id="estrofe4"
+                placeholder="Digite ou cole a letra da estrofe da música."></textarea>
+        </div>
+        <div class="col-12">
+            <label class="form-label" for="estrofe5">Estrofe 5 da Música:</label>
+            <textarea class="form-control" name="estrofe5" id="estrofe5"
+                placeholder="Digite ou cole a letra da estrofe da música."></textarea>
+        </div>
+        <div class="col-12">
+            <label class="form-label" for="refrao">Refrão da Música:</label>
+            <textarea class="form-control" name="refrao" id="refrao"
+                placeholder="Digite ou cole a letra do refrão da música."></textarea>
+        </div>
+        <div class="col-12">
+            <label class="form-label" for="momento">Momento da Missa que a Música Será Tocada:</label>
+            <input class="form-control" type="text" name="momento" id="momento"
+                placeholder="Digite o momento que a música será tocada na missa." required/>
+        </div>
+        <div class="col-12 mb-3 mt-0">
+            <input class="btn btn-primary my-3" type="submit" value="Cadastrar Música" />
+        </div>
+    </div>
+</form>

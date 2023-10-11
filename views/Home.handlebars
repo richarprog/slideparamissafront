@@ -1,0 +1,57 @@
+<div class="container py-5">
+    <div class="carousel slide carousel-fade" data-bs-ride="carousel" id="ads">
+      <div class="carousel-inner">
+        <div class="carousel-indicators">
+          <button class="active" data-bs-target="#ads" data-bs-slide-to="0"></button>
+          <button class="" data-bs-target="#ads" data-bs-slide-to="1"></button>
+          <button class="" data-bs-target="#ads" data-bs-slide-to="2"></button>
+        </div>
+        <div class="carousel-item active">
+          <img src="images/1.png" alt="" width="1280" height="420"  class="d-block w-100">
+          <div class="carousel-caption">
+            <h5>Crie seus slides com suas músicas em minutos.</h5>
+            <p>Com esse sistema você pode criar os slides das letras das músicas e fazer a assembléia cantar com você.</p>
+          </div>
+        </div>
+        <div class="carousel-item active">
+          <img src="images/2.png" alt=""  width="1280" height="420"  class="d-block w-100">
+          <div class="carousel-caption text-warning">
+            <h5 class="text-warning">Um slide em suas mãos em pouquíssimo tempo</h5>
+            <p>Crie slides com letras de músicas, em pouco tempo ele fica pronto. Basta escolher as músicas e incluir nos slides.</p>
+          </div>
+        </div>
+        <div class="carousel-item active">
+          <img src="images/3.png" alt=""  width="1280" height="420"  class="d-block w-100">
+          <div class="carousel-caption">
+            <h5>Projete suas músicas.</h5>
+            <p>Projete as letras das músicas do evento de sua igreja e deixe as pessoas catarem com você.</p>
+          </div>
+        </div>
+        <button class="carousel-control-prev" data-bs-target="#ads" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" data-bs-target="#ads" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+<h2 class="text-center">{{mensagemInicial}}</h2>
+
+<div class="col-12 mt-3 mb-5 p-2">  
+<p class="m-3">O sistema de criação de slides serve para facilitar a inclusão de músicas no arquivo pptx. Para usar, basta pesquisar a música no banco de dados e clicar no botão incluir, que ela será incluida no slide. Caso a música pesquisada não seja encontrada, você pode cadastrá-la</p>
+<div class="container text-center">
+    <h2 cls="mt-3">Escolha uma das opções abaixo</h2>  
+    <div class="row">
+        <div class="col-6 shadow-sm">
+            <p>Aqui você pode escolher as músicas que serão adicionadas ao arquivo.</p>
+            <a class="btn btn-info m-3" href="/musicas/Encontrar">Encontrar músicas e criar slides</a>
+        </div>
+        <div class="col-6 shadow-sm">
+            <p>Aqui você pode cadastrar a música no banco de dados caso você não encontre-a na busca</p>
+            <a class="btn btn-info mb-3" href="/musicas/Cadastrar">Cadastrar música</a>            
+        </div>
+    </div>
+</div>
+</div>

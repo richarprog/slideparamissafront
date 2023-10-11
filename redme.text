@@ -1,0 +1,57 @@
+
+<a class="btn btn-info m-3" href="/">Voltar</a> 
+<h1 class="text-center m-3">Sistema para incluir músicas no slide</h1>
+
+
+<div class="row col-12">
+  <form action="/musicas" method="get">
+    <div class="input-group">
+      <label class="input-group-text" for="palavrasChave"><i class="bi-search"></i></label>
+      <input class="form-control" type="search" name="palavrasChave" id="palavrasChave" placeholder="Digita uma palavra-chave para buscar a música."/>      
+    <input class="btn btn-success" type="submit" value="buscar" />
+    </div>
+    <div>
+    </div>
+  </form>    
+</div> 
+    
+    {{#each musicas}}
+      <div id="musica" class="text-center">    
+        {{{this}}}      
+        <div id="botao" class="col-12 d-flex justify-content-center p-2">
+                <form action="/addnalista" method="POST">
+                  <input type="hidden" name="musicas" value="{{this}}">
+                  <input class="btn btn-success ms-2" type="submit" value="Adicionar">
+                </form>
+          </div>
+          </div>
+    {{/each}}
+      
+
+<div class="col-12">
+<h3>Musicas adicionadas</h3>
+{{#each musicasEscolhidas}}
+  {{{this}}}
+  <div id="botao-{{@index}}" class="col-4 d-flex justify-content-start p-2">
+    <form action="/removerdalista" method="POST">
+      <input type="hidden" name="musicaId" value="{{idDaMusica}}">
+      <input class="btn btn-danger ms-2" type="submit" value="remover">
+    </form>
+  </div>
+  {{/each}}
+</div>
+<form action="/criar" method="POST">
+    <input type="hidden" name="musicasEscolhidas" value="{{musicasEscolhidas}}">
+    <input class="btn btn-success ms-2" type="submit" value="Criar Slide">
+</form>
+  
+  <script>
+    const containerMusica = document.querySelector('#musica');
+    const botao = document.querySelector('#botao')
+
+  </script>
+
+
+
+
+

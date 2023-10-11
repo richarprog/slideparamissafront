@@ -1,0 +1,72 @@
+<style>
+    .h600{
+        height: 600px;
+    }
+    .h100{
+        height: 100px;
+    }
+
+</style>
+
+<div class="container-fluid">
+    <div class="row">
+         <div class="col shadow h600 text-center">
+            <h2 class="">Pesquisar músicas</h2>
+            <p class="text-center">Use o campo abaixo para pesquisar as músicas que deseja colocar no slide. Digite uma alavra-chave.
+            </p>
+             <form action="/musicas" method="get">
+                <div class="input-group">
+                <label class="input-group-text" for="palavrasChave"><i class="bi-search"></i></label>
+                <input class="form-control" type="search" name="palavrasChave" id="palavrasChave" placeholder="Digita uma palavra-chave para buscar a música."/>      
+                <input class="btn btn-success" type="submit" value="buscar" />
+                </div>
+            </form> 
+            <a class="btn btn-info m-3" href="/">Voltar</a>   
+         </div>
+
+         <div class="col shadow bg-sencondary h600 overflow-auto">
+            <div class="list-group mt-3 justify-content-between">
+          <h3 class="text-center list-group-item">Músicas Encontradas<span class=" ms-3 badge bg-primary">{{{musicas.length}}}</span></h3>
+            </div>
+            {{#if musicas.length}}
+            {{#each musicas}}
+            <div id="musica" class="text-center">    
+                {{{this}}}      
+                <div id="botao" class="col-12 d-flex justify-content-center p-2">
+                        <form action="/addnalista" method="POST">
+                        <input type="hidden" name="musicas" value="{{this}}">
+                        <input class="btn btn-success ms-2" type="submit" value="Adicionar">
+                        </form>
+                </div>
+                </div>
+            {{/each}}
+            {{else}}
+                <div class="text-center">
+                <p>Suas músicas aparecerão aqui.</p>
+                </div>
+            {{/if}}
+         </div>
+         <div class="col shadow h46 text-center overflow-auto">
+           <div class="col shadow h46 text-center overflow-auto">
+     <div class="list-group d-flex justify-content-center m-3">
+        <h3 class="list-group-item">Musicas adicionadas<span class="badge bg-success ms-3 text-center justify-content-center align-itens-center">{{{musicasEscolhidas.length}}}</span></h3>
+        
+     </div>       
+    
+    {{#each musicasEscolhidas}}
+        <div id="musicaEscolhida" class="text-center">    
+            {{{this}}}      
+            <div id="botao" class="col-12 d-flex justify-content-center p-2">
+                <form action="/removerdalista" method="POST">
+                    <input type="hidden" name="musicaEscolhida" value="{{@index}}">
+                    <input class="btn btn-danger ms-2" type="submit" value="Excluir">
+                </form>
+            </div>
+        </div>
+    {{/each}}
+
+                <form action="/criar" method="POST">
+                    <input type="hidden" name="musicasEscolhidas" value="{{musicasEscolhidas}}">
+                    <input class="btn btn-success ms-2" type="submit" value="Criar Slide">
+                </form>
+         </div>
