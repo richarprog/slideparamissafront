@@ -1,0 +1,22 @@
+[build]
+  # Comando de construção: especifica o comando para iniciar a construção do seu projeto Node.js
+  command = "npm run build" # ou "yarn build" se você estiver usando Yarn
+
+  # Diretório de construção: o diretório onde o projeto construído está localizado após a compilação
+  publish = "dist" # ajuste para o diretório correto, se diferente
+
+# Configurações do ambiente
+[build.environment]
+  # Especifica a versão do Node.js que você deseja usar
+  NODE_VERSION = "14"
+
+# Configurações de cache (opcional)
+[build.cache]
+  # Cache de diretórios: lista de diretórios para armazenar em cache entre compilações
+  directories = ["node_modules"]
+
+# Configurações de redirecionamento (opcional)
+[[redirects]]
+  from = "/*" # redireciona todas as rotas
+  to = "/index.html" # para o arquivo index.html (ou outra rota de entrada)
+
