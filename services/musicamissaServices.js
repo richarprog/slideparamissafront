@@ -21,7 +21,7 @@ module.exports = class Services {
     try {
       let valores = req.body;
       const options = {
-        url: 'http://127.0.0.1:3000/cadastrar',
+        url: 'https://bancodedadosmusicas-api.onrender.com/cadastrar',
         method: 'POST',
         data: valores
       };
@@ -49,7 +49,7 @@ module.exports = class Services {
       }
 
       const options = {
-        url: `http://127.0.0.1:3000/musica?palavrasChave=${palavrasChave}`,
+        url: `https://bancodedadosmusicas-api.onrender.com/musica?palavrasChave=${palavrasChave}`,
         method: 'GET',
       };
 
