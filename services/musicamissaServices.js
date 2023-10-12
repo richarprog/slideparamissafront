@@ -183,6 +183,8 @@ static async CriarSlide(req, res) {
     const pptxFilePath = path.join(__dirname, "../arquivos", `ArquivoPronto.pptx`);
     apresentacao.writeFile(pptxFilePath);
 
+    musicasEscolhidas = [];
+
     // Envie o arquivo PPTX como resposta para download
     setTimeout(() => {
       res.setHeader('Content-Disposition', `attachment; filename="ArquivoPronto.pptx"`);
