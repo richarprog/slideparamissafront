@@ -111,11 +111,10 @@ module.exports = class Services {
 }
 
 static async RemoverDaLista(req, res) {
-  let musicaARemover = req.body.musicaEscolhida;
-    let index = musicasEscolhidas.indexOf(musicaARemover);
-    if (index !== -1) {
-        musicasEscolhidas.splice(index, 1);
-}
+  let indexMusicaARemover = req.body.musicaEscolhida;
+  if (indexMusicaARemover >= 0 && indexMusicaARemover < musicasEscolhidas.length) {
+    musicasEscolhidas.splice(indexMusicaARemover, 1); // Remove a música no índice especificado
+  }
 res.render('./musicas/Encontrar', {musicasEscolhidas});
 }
 
