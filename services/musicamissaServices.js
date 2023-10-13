@@ -121,6 +121,7 @@ res.render('./musicas/Encontrar', {musicasEscolhidas});
 static async CriarSlide(req, res) {
   try {
     // Recebendo o html    
+    let musicasEscolhidas = [];
     musicasEscolhidas = req.body.musicasEscolhidas;
     const musicas = musicasEscolhidas.match(/<html>.*?<\/html>/gs);
     console.log(musicas.length);
@@ -184,11 +185,13 @@ static async CriarSlide(req, res) {
     apresentacao.writeFile(pptxFilePath);
 
     musicasEscolhidas = [];
+    
 
     // Envie o arquivo PPTX como resposta para download
     setTimeout(() => {
       res.setHeader('Content-Disposition', `attachment; filename="ArquivoPronto.pptx"`);
       res.sendFile(pptxFilePath);
+      res.render('./musicas/Encontrar', {musicasEscolhidas});
     }, 200);
   } catch (error) {
     console.error("Erro ao criar o slide:", error);
