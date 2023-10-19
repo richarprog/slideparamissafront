@@ -191,7 +191,6 @@ static async CriarSlide(req, res) {
     setTimeout(() => {
       res.setHeader('Content-Disposition', `attachment; filename="ArquivoPronto.pptx"`);
       res.sendFile(pptxFilePath);
-      res.render('./musicas/Encontrar', {musicasEscolhidas});
     }, 200);
   } catch (error) {
     console.error("Erro ao criar o slide:", error);
