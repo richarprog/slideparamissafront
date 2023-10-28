@@ -21,7 +21,7 @@ module.exports = class Services {
     try {
       let valores = req.body;
       const options = {
-        url: 'https://bancodedadosmusicas-api.onrender.com/cadastrar',
+        url: 'https://api-dbmusicas-RicharlisomSouz.replit.app/cadastrar',
         method: 'POST',
         data: valores
       };
@@ -49,7 +49,7 @@ module.exports = class Services {
       }
 
       const options = {
-        url: `https://bancodedadosmusicas-api.onrender.com/musica?palavrasChave=${palavrasChave}`,
+        url: `https://api-dbmusicas-RicharlisomSouz.replit.app/musica?palavrasChave=${palavrasChave}`,
         method: 'GET',
       };
 
