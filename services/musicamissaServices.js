@@ -63,9 +63,11 @@ module.exports = class Services {
         const htmlContent = response.data;  
         
         const musicas = htmlContent.match(/<li>.*?<\/li>/gs);
+
+        const mensagem = "Músicas Encontradas"
         
          
-        res.render("./musicas/Encontrar", {musicas, musicasEscolhidas}); // "sua_template" é o nome do seu arquivo de modelo/template
+        res.render("./musicas/Encontrar", {mensagem, musicas, musicasEscolhidas}); // "sua_template" é o nome do seu arquivo de modelo/template
         
       } else {
         const data = response.data;
@@ -75,8 +77,8 @@ module.exports = class Services {
 
     } catch (error) {
       console.error("Erro ao buscar a música:", error);
-      const mensagem = "Não encontrou a letra da música? \n Não tem problema! Você pode cadastrar a música, é só clicar no botão abaixo!"
-      res.render("./mensagem", {mensagem});
+      const mensagem = "Nenhuma Música Encontrada"
+      res.render("./musicas/Encontrar", {mensagem, musicasEscolhidas});
     }
   }
 

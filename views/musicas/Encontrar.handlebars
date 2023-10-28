@@ -23,10 +23,16 @@
             </form> 
             <a class="btn btn-info m-3" href="/">Voltar</a>   
          </div>
-
+         
+        
          <div class="col shadow bg-sencondary h600 overflow-auto">
+            
             <div class="list-group mt-3 justify-content-between">
-          <h3 class="text-center list-group-item">Músicas Encontradas<span class=" ms-3 badge bg-primary">{{{musicas.length}}}</span></h3>
+            {{#if mensagem}}
+            <h4 class="text-center list-group-item">{{{mensagem}}}<span class=" ms-3 badge bg-primary">{{{musicas.length}}}</span></h4>
+            {{else}}
+            <h5 class="text-center list-group-item">Suas músicas aparecerão aqui.</h5>            
+            {{/if}}
             </div>
             {{#if musicas.length}}
             {{#each musicas}}
@@ -41,9 +47,10 @@
                 </div>
             {{/each}}
             {{else}}
-                <div class="text-center">
-                <p>Suas músicas aparecerão aqui.</p>
-                </div>
+                <div class="col-6 offset-3 shadow-sm text-center mt-5">
+        <p>Aqui você pode cadastrar a música no banco de dados caso você não encontre-a na busca</p>
+        <a class="btn btn-info mb-3" href="/musicas/Cadastrar">Cadastrar música</a>            
+    </div>
             {{/if}}
          </div>
          <div class="col shadow h46 text-center overflow-auto">
